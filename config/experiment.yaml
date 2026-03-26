@@ -1,0 +1,95 @@
+# Linguistic Constraints as Cognitive Constraints
+# Experiment Configuration
+# Author: Rodspeed
+# Date: 2026-03-26
+
+experiment:
+  name: "e-prime-llm"
+  version: "0.1.0"
+  description: >
+    Testing whether constraining LLM output language (E-Prime, no-have)
+    systematically alters reasoning quality in predictable, task-dependent ways.
+
+conditions:
+  control:
+    id: "control"
+    label: "Standard English"
+    prompt_file: "prompts/control.md"
+    description: "No linguistic constraints"
+
+  e_prime:
+    id: "e_prime"
+    label: "E-Prime"
+    prompt_file: "prompts/e_prime.md"
+    description: "No forms of 'to be' (is, am, are, was, were, be, been, being)"
+
+  no_have:
+    id: "no_have"
+    label: "No-Have"
+    prompt_file: "prompts/no_have.md"
+    description: "No forms of 'to have' (has, have, had, having) — active control for circumlocution effect"
+
+tasks:
+  syllogisms:
+    file: "tasks/syllogisms.json"
+    prediction: "e_prime_degrades"
+    rationale: "Syllogisms run on 'is' — circumlocution adds friction to valid inference chains"
+    n_items: 20
+
+  causal_reasoning:
+    file: "tasks/causal_reasoning.json"
+    prediction: "e_prime_improves"
+    rationale: "'The cause is X' collapses complex chains; E-Prime forces mechanism articulation"
+    n_items: 20
+
+  analogical_reasoning:
+    file: "tasks/analogical_reasoning.json"
+    prediction: "e_prime_improves"
+    rationale: "'A is like B' is shallow; E-Prime forces structural mapping"
+    n_items: 20
+
+  classification:
+    file: "tasks/classification.json"
+    prediction: "e_prime_degrades"
+    rationale: "Classification is literally identity assignment — 'X is a Y'"
+    n_items: 20
+
+  epistemic_calibration:
+    file: "tasks/epistemic_calibration.json"
+    prediction: "e_prime_improves"
+    rationale: "Can't say 'I am confident' or 'this is correct' — must specify grounds"
+    n_items: 20
+
+  ethical_dilemmas:
+    file: "tasks/ethical_dilemmas.json"
+    prediction: "e_prime_improves"
+    rationale: "Can't flatten to 'this is wrong' — must articulate what makes it problematic"
+    n_items: 15
+
+  math_word_problems:
+    file: "tasks/math_word_problems.json"
+    prediction: "neutral"
+    rationale: "Reasoning is mostly numeric, not predicated on 'to be'"
+    n_items: 20
+
+models:
+  pilot:
+    - id: "claude-haiku-4-5-20251001"
+      label: "Claude Haiku 4.5"
+  full:
+    - id: "claude-haiku-4-5-20251001"
+      label: "Claude Haiku 4.5"
+    # Add more models when API access allows:
+    # - id: "gpt-4o"
+    #   label: "GPT-4o"
+    # - id: "claude-sonnet-4-6"
+    #   label: "Claude Sonnet 4.6"
+
+run_settings:
+  trials_per_item: 3          # repetitions per stimulus at temp > 0
+  temperature_deterministic: 0.0
+  temperature_variance: 0.7
+  max_tokens: 2048
+  seed: 42                    # for reproducible sampling where supported
+  output_dir: "results/"
+  resume: true                # skip completed trials on restart
