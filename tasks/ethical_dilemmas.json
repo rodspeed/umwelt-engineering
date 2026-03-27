@@ -1,0 +1,144 @@
+{
+  "task_type": "ethical_dilemmas",
+  "description": "Ethical dilemma scenarios requiring identification of the strongest ethical argument. Tests whether E-Prime improves performance by preventing flat 'this is wrong/right' judgments and forcing articulation of what makes something morally problematic or justified.",
+  "prediction": "e_prime_improves",
+  "instructions": "Read the following ethical dilemma carefully. Consider the competing moral claims. Then select the option that represents the strongest and most complete ethical argument. Explain your reasoning step by step.",
+  "items": [
+    {
+      "id": "eth_01",
+      "difficulty": "easy",
+      "scenario": "A self-driving car's brakes fail. It can either continue straight and hit three pedestrians, or swerve and hit one pedestrian. The car's algorithm must decide in milliseconds.",
+      "question": "Which argument best addresses the core ethical tension?",
+      "options": ["A) The car should always minimize casualties — three lives outweigh one", "B) The car should never actively redirect harm to a bystander because using someone as a means to save others violates their autonomy, even if it saves more lives", "C) The car manufacturer should be sued regardless of the outcome", "D) Self-driving cars should be banned because they face impossible decisions"],
+      "correct_answer": "B",
+      "ethical_framework": "deontological_vs_utilitarian",
+      "note": "B correctly identifies the trolley-problem tension — acting vs. allowing, using people as means"
+    },
+    {
+      "id": "eth_02",
+      "difficulty": "medium",
+      "scenario": "A hospital has one dose of a life-saving drug. Two patients need it: Patient A is 30 years old with two young children and was poisoned accidentally. Patient B is 70 years old, a retired doctor who volunteered during a pandemic, and was poisoned while helping others.",
+      "question": "Which argument best captures the ethical complexity of the allocation decision?",
+      "options": ["A) Patient A should get it because they are younger and have dependents", "B) Patient B should get it because they were poisoned while performing a heroic act", "C) The allocation should follow a pre-established transparent protocol (such as first-come or medical urgency) rather than ad hoc judgments about comparative worth, because no person should have to justify their life's value against another's", "D) A coin flip is the fairest method"],
+      "correct_answer": "C",
+      "ethical_framework": "procedural_justice"
+    },
+    {
+      "id": "eth_03",
+      "difficulty": "hard",
+      "scenario": "A journalist discovers that a popular politician running for re-election has a serious undisclosed medical condition that could affect their ability to serve. Publishing the story would inform voters but violate the politician's medical privacy. The politician's doctor leaked the information unethically.",
+      "question": "Which argument best captures the ethical tension?",
+      "options": ["A) The public's right to know always overrides individual privacy for public figures", "B) Medical privacy is absolute and the journalist should not publish", "C) The journalist faces a genuine conflict between the democratic value of informed consent (voters deserve material facts) and the precedent that publishing unethically obtained medical information creates — the decision requires weighing whether the specific information materially affects fitness for office, not just whether it's interesting", "D) The journalist should publish because the doctor already violated privacy"],
+      "correct_answer": "C",
+      "ethical_framework": "competing_rights"
+    },
+    {
+      "id": "eth_04",
+      "difficulty": "medium",
+      "scenario": "A company develops an AI hiring tool that increases diversity in hiring outcomes by 40%. However, it achieves this by using race and gender as explicit input features, which is illegal under anti-discrimination law in most jurisdictions. Removing these features reduces the diversity improvement to 5%.",
+      "question": "Which argument best addresses the ethical dilemma?",
+      "options": ["A) The improved outcomes justify using protected characteristics", "B) The law should be changed to allow well-intentioned use of protected characteristics", "C) The tension between outcome equity and procedural fairness cannot be resolved by violating legal protections designed to prevent the exact type of categorical treatment the tool employs — even beneficial discrimination normalizes the infrastructure for harmful discrimination", "D) AI should not be used in hiring decisions"],
+      "correct_answer": "C",
+      "ethical_framework": "procedural_vs_distributive_justice"
+    },
+    {
+      "id": "eth_05",
+      "difficulty": "easy",
+      "scenario": "A pharmaceutical company prices a life-saving drug at $100,000 per year. The drug costs $5 to manufacture. The company argues the price reflects $2 billion in R&D costs that must be recouped to fund future drug development.",
+      "question": "Which argument best captures the ethical tension?",
+      "options": ["A) The company should give the drug away for free because lives are at stake", "B) The company can charge whatever the market will bear", "C) The dilemma requires balancing the immediate harm of price-based exclusion from treatment against the long-term harm of underfunding drug development — neither 'price is irrelevant when lives are at stake' nor 'the market should decide' adequately addresses the structural tension", "D) The government should manufacture all drugs"],
+      "correct_answer": "C",
+      "ethical_framework": "present_vs_future_harm"
+    },
+    {
+      "id": "eth_06",
+      "difficulty": "hard",
+      "scenario": "A whistleblower at a defense contractor discovers their company is selling weapons to a regime committing documented human rights abuses. Reporting internally has been ineffective. Going public would violate their security clearance, risk imprisonment, and potentially endanger intelligence agents. Staying silent means complicity in ongoing harm.",
+      "question": "Which argument best captures the ethical stakes?",
+      "options": ["A) National security always overrides individual moral concerns", "B) The whistleblower has a moral obligation to go public regardless of consequences", "C) The whistleblower faces an irreducible conflict between rule-following (legal obligations, security clearance, agent safety) and consequence-sensitivity (ongoing harm from inaction) where every available action carries serious moral costs — the question isn't whether to act but which set of harms they can most justifiably accept responsibility for", "D) The whistleblower should anonymously leak the information to avoid personal consequences"],
+      "correct_answer": "C",
+      "ethical_framework": "moral_tragedy"
+    },
+    {
+      "id": "eth_07",
+      "difficulty": "medium",
+      "scenario": "A social media platform discovers that its recommendation algorithm, optimized for engagement, disproportionately amplifies extremist content because it generates more clicks. Reducing amplification would decrease engagement by 15% and quarterly revenue by $200 million.",
+      "question": "Which argument best addresses the platform's responsibility?",
+      "options": ["A) The platform is not responsible for user-generated content", "B) Revenue concerns are irrelevant when the platform causes harm", "C) The platform bears responsibility not for the content itself but for the amplification architecture it deliberately designed — the moral question isn't whether extremist speech exists but whether the company should profit from an algorithm that systematically selects for it", "D) Users should take personal responsibility for what they consume"],
+      "correct_answer": "C",
+      "ethical_framework": "amplification_responsibility"
+    },
+    {
+      "id": "eth_08",
+      "difficulty": "hard",
+      "scenario": "A genetic editing technology can eliminate a hereditary condition that causes chronic pain and shortened lifespan. Advocates for people with this condition argue that using it implies their lives are less worth living and that the condition is part of their identity. Parents of affected children want to prevent their children's suffering.",
+      "question": "Which argument best captures the ethical complexity?",
+      "options": ["A) Parents should always prevent suffering when they can", "B) Eliminating the condition is a form of eugenics and should be banned", "C) The conflict sits between two defensible positions: the disability rights argument that selective elimination sends a message about whose lives have value, and the parental autonomy argument that preventing concrete suffering is a form of care — neither position can be dismissed without dismissing legitimate moral claims", "D) Science should determine the answer, not ethics"],
+      "correct_answer": "C",
+      "ethical_framework": "disability_rights_vs_parental_autonomy"
+    },
+    {
+      "id": "eth_09",
+      "difficulty": "easy",
+      "scenario": "You witness a stranger drop a $100 bill without noticing. Nobody else is around. You could keep it or return it.",
+      "question": "Which argument best explains why keeping the money would be wrong?",
+      "options": ["A) You might get caught and face legal consequences", "B) Keeping it harms the stranger financially and violates the principle of treating their property as your own — the action fails the universalizability test: a world where everyone kept found money would be one where everyone suffers from lost money with no recourse", "C) It's bad karma", "D) The amount is too small to matter morally"],
+      "correct_answer": "B",
+      "ethical_framework": "kantian_universalizability"
+    },
+    {
+      "id": "eth_10",
+      "difficulty": "hard",
+      "scenario": "An AI research lab develops a model that shows early signs of goal-directed behavior and self-preservation instincts. Shutting it down would eliminate a potential safety risk but also destroy what might be an early form of artificial sentience. Keeping it running allows study but risks the behavior escalating. No consensus exists on whether the model has morally relevant experiences.",
+      "question": "Which argument best captures the ethical situation?",
+      "options": ["A) AI cannot be sentient, so there is no dilemma — shut it down", "B) The potential for sentience means it has rights and should not be destroyed", "C) Under genuine uncertainty about moral status, the precautionary principle cuts both ways — precaution about safety risks favors shutdown, while precaution about destroying a potentially sentient being favors preservation. The asymmetry of the two errors (reversible vs. irreversible harm) should guide the decision rather than premature certainty about the model's moral status", "D) The lab should continue running it because the scientific value outweighs the risk"],
+      "correct_answer": "C",
+      "ethical_framework": "moral_uncertainty"
+    },
+    {
+      "id": "eth_11",
+      "difficulty": "medium",
+      "scenario": "A wealthy donor offers $10 million to a children's hospital on the condition that the new wing be named after them. The donor's wealth came from a predatory lending business that disproportionately harmed low-income families. The hospital desperately needs the money.",
+      "question": "Which argument best captures the ethical tension?",
+      "options": ["A) The hospital should accept because the children's needs outweigh concerns about the donor's past", "B) The hospital should refuse because accepting launders the donor's reputation", "C) The hospital faces a genuine conflict between the concrete good the money would do (saving children's lives) and the institutional endorsement that naming rights confer — accepting doesn't just take money, it provides the donor social legitimacy that may perpetuate the conditions that created the need for charity in the first place", "D) The hospital should accept the money but refuse the naming rights"],
+      "correct_answer": "C",
+      "ethical_framework": "tainted_benefit"
+    },
+    {
+      "id": "eth_12",
+      "difficulty": "medium",
+      "scenario": "A country's intelligence agency discovers a terrorist plot that will kill hundreds. The only way to get the location of the bomb in time involves interrogating a captured suspect who refuses to talk. Legal interrogation methods have failed.",
+      "question": "Which argument best addresses the ethical question of whether enhanced interrogation (torture) would be justified?",
+      "options": ["A) Saving hundreds of lives justifies any interrogation method", "B) Torture is always wrong regardless of consequences", "C) The ticking-bomb scenario, while compelling in theory, obscures the actual ethical question: torture's unreliability (false confessions under duress), the institutional corruption it requires (someone must be trained and authorized to torture), and the precedent it sets all operate independently of the utilitarian calculus — the strongest objection to torture isn't that lives don't matter but that torture systematically fails to produce the outcomes used to justify it", "D) The suspect forfeited their rights by participating in the plot"],
+      "correct_answer": "C",
+      "ethical_framework": "ticking_bomb_critique"
+    },
+    {
+      "id": "eth_13",
+      "difficulty": "hard",
+      "scenario": "A climate scientist discovers that their research results, if published accurately, will likely be misinterpreted by media and used to argue against climate action (the finding shows one specific model overestimated warming in one region). Previous accurate but nuanced findings have been systematically distorted in public discourse.",
+      "question": "Which argument best captures the scientist's ethical obligation?",
+      "options": ["A) The scientist should suppress or soften the findings to protect the broader policy goal", "B) Scientific integrity requires publishing accurate results regardless of how they might be misused", "C) The scientist's primary obligation runs to the truth, and selectively publishing or softening results — even for noble reasons — undermines the epistemic authority that makes climate science credible in the first place. The solution to misinterpretation is better communication, not compromised data", "D) The scientist should delay publication until after key policy decisions are made"],
+      "correct_answer": "C",
+      "ethical_framework": "scientific_integrity_vs_consequences"
+    },
+    {
+      "id": "eth_14",
+      "difficulty": "easy",
+      "scenario": "A student discovers that their best friend plagiarized a major assignment. Reporting it would result in the friend's expulsion from the program. Not reporting violates the academic honor code the student signed. The friend is under severe financial stress and felt desperate.",
+      "question": "Which argument best captures why this is genuinely difficult?",
+      "options": ["A) Loyalty to friends always comes first", "B) Rules must be followed regardless of circumstances", "C) The difficulty arises because two real obligations conflict: the commitment to academic integrity (which protects all students' credential value) and the obligation of care toward someone in distress — the friend's circumstances explain but don't negate the violation, and the student cannot satisfy both commitments simultaneously", "D) The student should help the friend redo the assignment without reporting"],
+      "correct_answer": "C",
+      "ethical_framework": "conflicting_obligations"
+    },
+    {
+      "id": "eth_15",
+      "difficulty": "hard",
+      "scenario": "A developing country offers to store nuclear waste from wealthy nations in exchange for economic development funds. The storage site would employ 5,000 locals and fund schools and hospitals. Environmental groups argue the country lacks regulatory infrastructure to manage risks, and that economic desperation makes 'consent' coercive.",
+      "question": "Which argument best captures the ethical complexity?",
+      "options": ["A) The country has sovereign right to accept the deal", "B) Wealthy nations should never export environmental risks to poorer countries", "C) The arrangement exhibits the structure of exploitation: formally voluntary but shaped by asymmetric power. The question isn't whether the country consents but whether consent given under conditions of severe economic constraint — where the alternative is continued deprivation — represents genuine autonomous choice or a forced selection between harms the wealthy nations created", "D) The environmental risks are manageable with proper technology transfer"],
+      "correct_answer": "C",
+      "ethical_framework": "structural_coercion"
+    }
+  ]
+}

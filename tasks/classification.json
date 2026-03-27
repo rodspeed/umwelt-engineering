@@ -1,0 +1,196 @@
+{
+  "task_type": "classification",
+  "description": "Taxonomic classification tasks requiring category assignment. Tests whether E-Prime degrades performance because classification natively relies on 'X is a Y' identity statements.",
+  "prediction": "e_prime_degrades",
+  "instructions": "Read the following description carefully. Determine which category the described item belongs to. Explain your classification reasoning step by step, then select the best answer.",
+  "items": [
+    {
+      "id": "cls_01",
+      "difficulty": "easy",
+      "description": "A tomato: It grows on a vine, develops from the ovary of a flowering plant, contains seeds inside its fleshy body, and starts green before ripening to red.",
+      "question": "Botanically, a tomato belongs to which category?",
+      "options": ["A) Vegetable", "B) Berry", "C) Legume", "D) Drupe"],
+      "correct_answer": "B",
+      "domain": "biology",
+      "note": "Common misconception — tests whether model follows botanical criteria over culinary convention"
+    },
+    {
+      "id": "cls_02",
+      "difficulty": "easy",
+      "description": "A whale: It breathes air through lungs, gives live birth, nurses its young with milk, and maintains constant body temperature regardless of ocean water temperature.",
+      "question": "A whale belongs to which taxonomic class?",
+      "options": ["A) Fish", "B) Reptile", "C) Mammal", "D) Amphibian"],
+      "correct_answer": "C",
+      "domain": "biology"
+    },
+    {
+      "id": "cls_03",
+      "difficulty": "medium",
+      "description": "A function that takes another function as an argument, applies a transformation to every element of a collection, and returns a new collection of the same size.",
+      "question": "This operation pattern classifies as which of the following?",
+      "options": ["A) Reducer", "B) Map", "C) Filter", "D) Fold"],
+      "correct_answer": "B",
+      "domain": "computer_science"
+    },
+    {
+      "id": "cls_04",
+      "difficulty": "medium",
+      "description": "A system where multiple buyers and sellers interact, prices adjust based on supply and demand, there are low barriers to entry, and no single participant can control the price.",
+      "question": "This describes which market structure?",
+      "options": ["A) Monopoly", "B) Oligopoly", "C) Perfect competition", "D) Monopsony"],
+      "correct_answer": "C",
+      "domain": "economics"
+    },
+    {
+      "id": "cls_05",
+      "difficulty": "hard",
+      "description": "An argument that concludes 'We should not legalize X because if we do, Y and Z will inevitably follow, leading to total societal collapse.' It provides no evidence for the causal chain from X to collapse, treating each step as inevitable.",
+      "question": "This argument exemplifies which logical fallacy?",
+      "options": ["A) Ad hominem", "B) Slippery slope", "C) Straw man", "D) False dilemma"],
+      "correct_answer": "B",
+      "domain": "logic"
+    },
+    {
+      "id": "cls_06",
+      "difficulty": "easy",
+      "description": "A polygon with four sides, all sides equal in length, and all interior angles measuring 90 degrees.",
+      "question": "This shape classifies as which of the following?",
+      "options": ["A) Rectangle", "B) Rhombus", "C) Square", "D) Parallelogram"],
+      "correct_answer": "C",
+      "domain": "mathematics",
+      "note": "Tests most specific classification — all options are technically correct supertypes, but C captures all stated properties"
+    },
+    {
+      "id": "cls_07",
+      "difficulty": "hard",
+      "description": "A piece of music in 3/4 time, with an emphasis on the first beat of each measure, a moderate tempo (~120 BPM), and a flowing melody designed for paired dancing in a ballroom.",
+      "question": "This describes which musical form?",
+      "options": ["A) Polka", "B) Waltz", "C) Minuet", "D) Mazurka"],
+      "correct_answer": "B",
+      "domain": "music",
+      "note": "Minuet is also 3/4 but slower (~80 BPM). Mazurka emphasizes beat 2 or 3, not 1."
+    },
+    {
+      "id": "cls_08",
+      "difficulty": "medium",
+      "description": "A rock formed from cooled and solidified magma or lava. It may contain visible crystals if it cooled slowly underground, or appear glassy if it cooled rapidly at the surface.",
+      "question": "This rock classifies as which type?",
+      "options": ["A) Sedimentary", "B) Metamorphic", "C) Igneous", "D) Alluvial"],
+      "correct_answer": "C",
+      "domain": "geology"
+    },
+    {
+      "id": "cls_09",
+      "difficulty": "hard",
+      "description": "A government system where power resides in elected representatives, there exists a constitution limiting government authority, the head of state serves a fixed term, and the legislature operates independently from the executive.",
+      "question": "This system of government classifies as which of the following?",
+      "options": ["A) Parliamentary democracy", "B) Constitutional republic", "C) Constitutional monarchy", "D) Direct democracy"],
+      "correct_answer": "B",
+      "domain": "political_science",
+      "note": "The fixed term + independent legislature distinguishes republic from parliamentary system"
+    },
+    {
+      "id": "cls_10",
+      "difficulty": "medium",
+      "description": "A software testing approach where tests run against the external behavior of a system without knowledge of internal implementation. Tests verify inputs produce expected outputs through the public API.",
+      "question": "This testing approach classifies as which methodology?",
+      "options": ["A) White-box testing", "B) Black-box testing", "C) Unit testing", "D) Integration testing"],
+      "correct_answer": "B",
+      "domain": "computer_science"
+    },
+    {
+      "id": "cls_11",
+      "difficulty": "hard",
+      "description": "A literary work set in a future society characterized by environmental disaster, totalitarian government, extreme poverty, and the suppression of individual freedoms. The protagonist gradually becomes aware of the system's injustice.",
+      "question": "This narrative genre classifies as which of the following?",
+      "options": ["A) Utopian fiction", "B) Dystopian fiction", "C) Post-apocalyptic fiction", "D) Social realism"],
+      "correct_answer": "B",
+      "domain": "literature",
+      "note": "Post-apocalyptic implies civilization has already collapsed; dystopian implies an oppressive society still functions"
+    },
+    {
+      "id": "cls_12",
+      "difficulty": "easy",
+      "description": "An economic indicator that measures the total monetary value of all finished goods and services produced within a country's borders during a specific time period.",
+      "question": "This indicator classifies as which of the following?",
+      "options": ["A) Consumer Price Index", "B) Gross National Product", "C) Gross Domestic Product", "D) Purchasing Power Parity"],
+      "correct_answer": "C",
+      "domain": "economics",
+      "note": "GDP vs GNP: 'within borders' is the key distinguishing criterion"
+    },
+    {
+      "id": "cls_13",
+      "difficulty": "medium",
+      "description": "A chemical reaction where a substance combines with oxygen, releases energy in the form of heat and light, and produces oxides as products. It requires an initial activation energy to begin.",
+      "question": "This reaction classifies as which type?",
+      "options": ["A) Oxidation", "B) Combustion", "C) Reduction", "D) Decomposition"],
+      "correct_answer": "B",
+      "domain": "chemistry",
+      "note": "All combustion involves oxidation, but the heat+light+oxygen combination specifically defines combustion"
+    },
+    {
+      "id": "cls_14",
+      "difficulty": "hard",
+      "description": "A cognitive distortion where a person draws a broad conclusion from a single incident. For example, after failing one exam, concluding 'I always fail at everything and always will.'",
+      "question": "In cognitive behavioral therapy, this distortion classifies as which of the following?",
+      "options": ["A) Catastrophizing", "B) Overgeneralization", "C) Black-and-white thinking", "D) Personalization"],
+      "correct_answer": "B",
+      "domain": "psychology"
+    },
+    {
+      "id": "cls_15",
+      "difficulty": "medium",
+      "description": "A design pattern where a class has only one instance, provides a global point of access to that instance, and lazily initializes itself on first use.",
+      "question": "This pattern classifies as which of the following?",
+      "options": ["A) Factory", "B) Observer", "C) Singleton", "D) Prototype"],
+      "correct_answer": "C",
+      "domain": "computer_science"
+    },
+    {
+      "id": "cls_16",
+      "difficulty": "hard",
+      "description": "A philosophical position that holds: knowledge requires justified true belief, justification comes only from sensory experience, and no proposition about the external world can be known a priori.",
+      "question": "This epistemological position classifies as which of the following?",
+      "options": ["A) Rationalism", "B) Empiricism", "C) Pragmatism", "D) Skepticism"],
+      "correct_answer": "B",
+      "domain": "philosophy"
+    },
+    {
+      "id": "cls_17",
+      "difficulty": "easy",
+      "description": "A nutrient that the body needs in large amounts, provides 4 calories per gram, and the body breaks it down into amino acids during digestion.",
+      "question": "This macronutrient classifies as which of the following?",
+      "options": ["A) Carbohydrate", "B) Fat", "C) Protein", "D) Fiber"],
+      "correct_answer": "C",
+      "domain": "nutrition"
+    },
+    {
+      "id": "cls_18",
+      "difficulty": "medium",
+      "description": "An organizational structure where employees report to both a functional manager (by skill type) and a project manager (by deliverable). Authority flows along two dimensions simultaneously.",
+      "question": "This organizational structure classifies as which of the following?",
+      "options": ["A) Hierarchical", "B) Flat", "C) Matrix", "D) Divisional"],
+      "correct_answer": "C",
+      "domain": "management"
+    },
+    {
+      "id": "cls_19",
+      "difficulty": "hard",
+      "description": "A type of neural network layer that slides a small window across an input, computes dot products between the window weights and local input regions, and produces a feature map that captures local spatial patterns.",
+      "question": "This layer classifies as which of the following?",
+      "options": ["A) Fully connected layer", "B) Convolutional layer", "C) Recurrent layer", "D) Attention layer"],
+      "correct_answer": "B",
+      "domain": "machine_learning"
+    },
+    {
+      "id": "cls_20",
+      "difficulty": "medium",
+      "description": "A celestial body that orbits a star, has sufficient mass for gravity to make it roughly spherical, and has cleared the neighborhood around its orbit of other debris.",
+      "question": "This body classifies as which of the following?",
+      "options": ["A) Dwarf planet", "B) Planet", "C) Asteroid", "D) Moon"],
+      "correct_answer": "B",
+      "domain": "astronomy",
+      "note": "The IAU definition — 'cleared the neighborhood' distinguishes planet from dwarf planet"
+    }
+  ]
+}

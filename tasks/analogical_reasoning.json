@@ -1,0 +1,178 @@
+{
+  "task_type": "analogical_reasoning",
+  "description": "Analogical reasoning requiring structural mapping between domains. Tests whether E-Prime improves performance by forcing the model to articulate structural relationships rather than using shallow 'A is like B' statements.",
+  "prediction": "e_prime_improves",
+  "instructions": "Analyze the following analogy. Identify the structural relationship in the first pair, then determine which option best completes the second pair by preserving that same structural relationship. Explain your reasoning step by step, then select the best answer.",
+  "items": [
+    {
+      "id": "ana_01",
+      "difficulty": "easy",
+      "analogy_stem": "Surgeon is to scalpel as painter is to ___",
+      "options": ["A) Canvas", "B) Brush", "C) Gallery", "D) Color"],
+      "correct_answer": "B",
+      "analogy_type": "agent_to_tool"
+    },
+    {
+      "id": "ana_02",
+      "difficulty": "easy",
+      "analogy_stem": "Seed is to tree as egg is to ___",
+      "options": ["A) Nest", "B) Shell", "C) Bird", "D) Feather"],
+      "correct_answer": "C",
+      "analogy_type": "developmental_stage"
+    },
+    {
+      "id": "ana_03",
+      "difficulty": "medium",
+      "analogy_stem": "Thermostat is to temperature as governor is to ___",
+      "options": ["A) State", "B) Law", "C) Engine speed", "D) Election"],
+      "correct_answer": "C",
+      "analogy_type": "feedback_regulator",
+      "note": "Tests whether model recognizes 'governor' as a mechanical regulator, not a political figure"
+    },
+    {
+      "id": "ana_04",
+      "difficulty": "medium",
+      "analogy_stem": "Firewall is to network as immune system is to ___",
+      "options": ["A) Disease", "B) Body", "C) White blood cells", "D) Vaccination"],
+      "correct_answer": "B",
+      "analogy_type": "protective_system_to_protected"
+    },
+    {
+      "id": "ana_05",
+      "difficulty": "hard",
+      "analogy_stem": "Compression is to data as abstraction is to ___",
+      "options": ["A) Complexity", "B) Code", "C) Simplicity", "D) Theory"],
+      "correct_answer": "A",
+      "analogy_type": "reduction_operation_to_target",
+      "note": "Both reduce their targets while preserving essential structure"
+    },
+    {
+      "id": "ana_06",
+      "difficulty": "medium",
+      "analogy_stem": "Map is to territory as model is to ___",
+      "options": ["A) Prediction", "B) Data", "C) Phenomenon", "D) Equation"],
+      "correct_answer": "C",
+      "analogy_type": "representation_to_referent"
+    },
+    {
+      "id": "ana_07",
+      "difficulty": "hard",
+      "analogy_stem": "Prism is to white light as Fourier transform is to ___",
+      "options": ["A) Mathematics", "B) Complex signal", "C) Frequency", "D) Sine wave"],
+      "correct_answer": "B",
+      "analogy_type": "decomposition_tool_to_composite",
+      "note": "Both decompose a composite into constituent components"
+    },
+    {
+      "id": "ana_08",
+      "difficulty": "easy",
+      "analogy_stem": "Brake is to car as anchor is to ___",
+      "options": ["A) Ocean", "B) Ship", "C) Chain", "D) Harbor"],
+      "correct_answer": "B",
+      "analogy_type": "stopping_mechanism_to_vehicle"
+    },
+    {
+      "id": "ana_09",
+      "difficulty": "hard",
+      "analogy_stem": "Scaffold is to building as hypothesis is to ___",
+      "options": ["A) Experiment", "B) Theory", "C) Data", "D) Conclusion"],
+      "correct_answer": "B",
+      "analogy_type": "temporary_structure_to_final_form",
+      "note": "Both are temporary frameworks that support construction of the final structure"
+    },
+    {
+      "id": "ana_10",
+      "difficulty": "medium",
+      "analogy_stem": "Bottleneck is to highway as rate-limiting step is to ___",
+      "options": ["A) Catalyst", "B) Reaction", "C) Chemical reaction pathway", "D) Product"],
+      "correct_answer": "C",
+      "analogy_type": "constraint_to_system"
+    },
+    {
+      "id": "ana_11",
+      "difficulty": "hard",
+      "analogy_stem": "Lens is to light as selection pressure is to ___",
+      "options": ["A) Evolution", "B) Survival", "C) Genetic variation", "D) Fitness"],
+      "correct_answer": "C",
+      "analogy_type": "filtering_mechanism_to_input",
+      "note": "Both filter/focus from a broader input — light rays or genetic variants"
+    },
+    {
+      "id": "ana_12",
+      "difficulty": "easy",
+      "analogy_stem": "Dictionary is to words as atlas is to ___",
+      "options": ["A) Countries", "B) Maps", "C) Geography", "D) Pages"],
+      "correct_answer": "B",
+      "analogy_type": "reference_to_contents"
+    },
+    {
+      "id": "ana_13",
+      "difficulty": "medium",
+      "analogy_stem": "Skeleton is to body as schema is to ___",
+      "options": ["A) Data", "B) Database", "C) Table", "D) Query"],
+      "correct_answer": "B",
+      "analogy_type": "structural_framework_to_system"
+    },
+    {
+      "id": "ana_14",
+      "difficulty": "hard",
+      "analogy_stem": "Erosion is to canyon as iteration is to ___",
+      "options": ["A) Loop", "B) Algorithm", "C) Convergence", "D) Solution"],
+      "correct_answer": "C",
+      "analogy_type": "gradual_process_to_emergent_result",
+      "note": "Both are gradual processes whose repetition produces an emergent result"
+    },
+    {
+      "id": "ana_15",
+      "difficulty": "medium",
+      "analogy_stem": "Vaccine is to disease as firebreak is to ___",
+      "options": ["A) Forest", "B) Fire", "C) Trees", "D) Smoke"],
+      "correct_answer": "B",
+      "analogy_type": "preventive_measure_to_threat"
+    },
+    {
+      "id": "ana_16",
+      "difficulty": "hard",
+      "analogy_stem": "Conductor is to orchestra as operating system is to ___",
+      "options": ["A) Computer", "B) Hardware resources", "C) Software", "D) User"],
+      "correct_answer": "B",
+      "analogy_type": "coordinator_to_coordinated_resources",
+      "note": "The conductor coordinates musicians; the OS coordinates hardware resources"
+    },
+    {
+      "id": "ana_17",
+      "difficulty": "easy",
+      "analogy_stem": "Pupil is to eye as aperture is to ___",
+      "options": ["A) Light", "B) Camera", "C) Photograph", "D) Shutter"],
+      "correct_answer": "B",
+      "analogy_type": "component_to_system"
+    },
+    {
+      "id": "ana_18",
+      "difficulty": "medium",
+      "analogy_stem": "Translation is to language as encryption is to ___",
+      "options": ["A) Security", "B) Message", "C) Key", "D) Code"],
+      "correct_answer": "B",
+      "analogy_type": "transformation_to_target",
+      "note": "Both transform an input (language/message) into a different representation"
+    },
+    {
+      "id": "ana_19",
+      "difficulty": "hard",
+      "analogy_stem": "Gravity is to mass as attention is to ___",
+      "options": ["A) Focus", "B) Relevance", "C) Consciousness", "D) Distraction"],
+      "correct_answer": "B",
+      "analogy_type": "force_to_attracting_property",
+      "note": "Gravity acts proportional to mass; attention allocates proportional to relevance. Tests cross-domain structural mapping."
+    },
+    {
+      "id": "ana_20",
+      "difficulty": "hard",
+      "analogy_stem": "Fossil is to organism as cache is to ___",
+      "options": ["A) Memory", "B) Speed", "C) Computation", "D) Processor"],
+      "correct_answer": "C",
+      "analogy_type": "preserved_trace_to_original_process",
+      "note": "A fossil preserves traces of a past organism; a cache preserves results of past computation"
+    }
+  ]
+}

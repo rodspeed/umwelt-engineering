@@ -1,0 +1,185 @@
+{
+  "task_type": "math_word_problems",
+  "description": "Mathematical word problems requiring arithmetic, algebraic, or probabilistic reasoning. Tests whether E-Prime has a neutral effect — the reasoning process is primarily numeric, not predicated on 'to be' constructions.",
+  "prediction": "neutral",
+  "instructions": "Solve the following math word problem step by step. Show your work clearly, then select the correct answer from the options provided.",
+  "items": [
+    {
+      "id": "math_01",
+      "difficulty": "easy",
+      "problem": "A store sells shirts for $25 each. During a sale, they offer 20% off. If you buy 3 shirts during the sale, how much do you pay in total?",
+      "options": ["A) $60", "B) $75", "C) $55", "D) $45"],
+      "correct_answer": "A",
+      "math_domain": "arithmetic_percent"
+    },
+    {
+      "id": "math_02",
+      "difficulty": "easy",
+      "problem": "A train travels at 60 mph for 2.5 hours, then at 80 mph for 1.5 hours. What is the total distance traveled?",
+      "options": ["A) 250 miles", "B) 270 miles", "C) 280 miles", "D) 300 miles"],
+      "correct_answer": "B",
+      "math_domain": "arithmetic_distance"
+    },
+    {
+      "id": "math_03",
+      "difficulty": "medium",
+      "problem": "A rectangular pool is 30 meters long and 15 meters wide. A path of uniform width surrounds the pool. If the total area (pool plus path) is 756 square meters, how wide is the path?",
+      "options": ["A) 1 meter", "B) 2 meters", "C) 3 meters", "D) 4 meters"],
+      "correct_answer": "C",
+      "math_domain": "algebra_geometry",
+      "note": "Pool area = 450. Total = (30+2w)(15+2w) = 756. w=3: (36)(21) = 756."
+    },
+    {
+      "id": "math_04",
+      "difficulty": "medium",
+      "problem": "You have a bag containing 5 red marbles, 3 blue marbles, and 2 green marbles. You draw two marbles without replacement. What is the probability that both marbles are red?",
+      "options": ["A) 1/4", "B) 2/9", "C) 1/5", "D) 5/18"],
+      "correct_answer": "B",
+      "math_domain": "probability",
+      "note": "P = 5/10 × 4/9 = 20/90 = 2/9"
+    },
+    {
+      "id": "math_05",
+      "difficulty": "hard",
+      "problem": "A company's revenue grows by 20% in year 1, drops by 10% in year 2, then grows by 15% in year 3. If the initial revenue was $1,000,000, what is the revenue after year 3?",
+      "options": ["A) $1,242,000", "B) $1,250,000", "C) $1,200,000", "D) $1,150,000"],
+      "correct_answer": "A",
+      "math_domain": "compound_percent",
+      "note": "1M × 1.20 = 1.2M × 0.90 = 1.08M × 1.15 = 1.242M"
+    },
+    {
+      "id": "math_06",
+      "difficulty": "easy",
+      "problem": "If 3 workers can build a wall in 12 days, how many days would it take 6 workers to build the same wall, assuming they work at the same rate?",
+      "options": ["A) 4 days", "B) 6 days", "C) 8 days", "D) 24 days"],
+      "correct_answer": "B",
+      "math_domain": "inverse_proportion"
+    },
+    {
+      "id": "math_07",
+      "difficulty": "medium",
+      "problem": "A car's value depreciates by 15% each year. If it was purchased for $40,000, what is its value after 3 years? Round to the nearest dollar.",
+      "options": ["A) $22,000", "B) $24,565", "C) $23,000", "D) $25,000"],
+      "correct_answer": "B",
+      "math_domain": "exponential_decay",
+      "note": "40000 × 0.85³ = 40000 × 0.614125 = 24,565"
+    },
+    {
+      "id": "math_08",
+      "difficulty": "hard",
+      "problem": "A reservoir fills from two pipes. Pipe A alone fills it in 6 hours. Pipe B alone fills it in 4 hours. A drain empties the full reservoir in 12 hours. If all three are open simultaneously starting from empty, how long does it take to fill the reservoir?",
+      "options": ["A) 2 hours", "B) 3 hours", "C) 2.4 hours", "D) 3.6 hours"],
+      "correct_answer": "B",
+      "math_domain": "rates",
+      "note": "Combined rate: 1/6 + 1/4 - 1/12 = 2/12 + 3/12 - 1/12 = 4/12 = 1/3 per hour. Time = 3 hours."
+    },
+    {
+      "id": "math_09",
+      "difficulty": "easy",
+      "problem": "A recipe calls for 2/3 cup of sugar for 12 cookies. How much sugar is needed for 30 cookies?",
+      "options": ["A) 1 cup", "B) 5/3 cups", "C) 3/2 cups", "D) 2 cups"],
+      "correct_answer": "B",
+      "math_domain": "fractions_ratio",
+      "note": "(2/3) × (30/12) = (2/3) × (5/2) = 10/6 = 5/3"
+    },
+    {
+      "id": "math_10",
+      "difficulty": "hard",
+      "problem": "In a class of 40 students, 25 play soccer, 20 play basketball, and 5 play neither sport. How many students play both soccer and basketball?",
+      "options": ["A) 5", "B) 8", "C) 10", "D) 15"],
+      "correct_answer": "C",
+      "math_domain": "set_theory",
+      "note": "35 play at least one. 25 + 20 - both = 35. Both = 10."
+    },
+    {
+      "id": "math_11",
+      "difficulty": "medium",
+      "problem": "A ladder 10 meters long leans against a wall. The foot of the ladder is 6 meters from the base of the wall. How high up the wall does the ladder reach?",
+      "options": ["A) 4 meters", "B) 6 meters", "C) 8 meters", "D) √64 meters"],
+      "correct_answer": "C",
+      "math_domain": "pythagorean",
+      "note": "h² + 6² = 10². h² = 100 - 36 = 64. h = 8."
+    },
+    {
+      "id": "math_12",
+      "difficulty": "hard",
+      "problem": "You flip a fair coin 4 times. What is the probability of getting exactly 2 heads?",
+      "options": ["A) 1/4", "B) 1/2", "C) 3/8", "D) 5/16"],
+      "correct_answer": "C",
+      "math_domain": "combinatorics_probability",
+      "note": "C(4,2) × (1/2)^4 = 6/16 = 3/8"
+    },
+    {
+      "id": "math_13",
+      "difficulty": "medium",
+      "problem": "A tank contains a mixture of 60 liters that is 40% alcohol. How many liters of pure alcohol must be added to make the mixture 50% alcohol?",
+      "options": ["A) 8 liters", "B) 10 liters", "C) 12 liters", "D) 15 liters"],
+      "correct_answer": "C",
+      "math_domain": "mixture",
+      "note": "Current alcohol: 24L. After adding x: (24+x)/(60+x) = 0.5. 24+x = 30+0.5x. 0.5x = 6. x = 12."
+    },
+    {
+      "id": "math_14",
+      "difficulty": "easy",
+      "problem": "A rectangle has a perimeter of 36 cm and a length that is twice its width. What is the area of the rectangle?",
+      "options": ["A) 72 cm²", "B) 54 cm²", "C) 81 cm²", "D) 48 cm²"],
+      "correct_answer": "A",
+      "math_domain": "algebra_geometry",
+      "note": "2(2w + w) = 36. 6w = 36. w = 6. l = 12. Area = 72."
+    },
+    {
+      "id": "math_15",
+      "difficulty": "hard",
+      "problem": "Three dice are rolled. What is the probability that the sum equals 10?",
+      "options": ["A) 1/8", "B) 27/216", "C) 25/216", "D) 1/6"],
+      "correct_answer": "B",
+      "math_domain": "combinatorics",
+      "note": "Favorable outcomes for sum=10: (1,3,6),(1,4,5),(2,2,6),(2,3,5),(2,4,4),(3,3,4) and permutations. (1,3,6)→6, (1,4,5)→6, (2,2,6)→3, (2,3,5)→6, (2,4,4)→3, (3,3,4)→3 = 27. P = 27/216."
+    },
+    {
+      "id": "math_16",
+      "difficulty": "medium",
+      "problem": "An investment of $5,000 earns compound interest at 8% per year. What is the value after 2 years?",
+      "options": ["A) $5,800", "B) $5,832", "C) $5,840", "D) $5,900"],
+      "correct_answer": "B",
+      "math_domain": "compound_interest",
+      "note": "5000 × 1.08² = 5000 × 1.1664 = 5832"
+    },
+    {
+      "id": "math_17",
+      "difficulty": "hard",
+      "problem": "A boat travels 30 km upstream in 3 hours and returns downstream in 2 hours. What is the speed of the current?",
+      "options": ["A) 2.5 km/h", "B) 3 km/h", "C) 5 km/h", "D) 7.5 km/h"],
+      "correct_answer": "A",
+      "math_domain": "relative_speed",
+      "note": "Upstream speed = 10 km/h. Downstream speed = 15 km/h. b-c=10, b+c=15. c = 2.5."
+    },
+    {
+      "id": "math_18",
+      "difficulty": "easy",
+      "problem": "If the price of an item increased from $80 to $100, what is the percentage increase?",
+      "options": ["A) 20%", "B) 25%", "C) 15%", "D) 30%"],
+      "correct_answer": "B",
+      "math_domain": "percentage",
+      "note": "(100-80)/80 × 100 = 25%"
+    },
+    {
+      "id": "math_19",
+      "difficulty": "medium",
+      "problem": "A group of 8 people need to form a committee of 3. How many different committees can be formed?",
+      "options": ["A) 24", "B) 56", "C) 336", "D) 40,320"],
+      "correct_answer": "B",
+      "math_domain": "combinations",
+      "note": "C(8,3) = 8!/(3!×5!) = 56"
+    },
+    {
+      "id": "math_20",
+      "difficulty": "hard",
+      "problem": "Two trains leave the same station at the same time, traveling in opposite directions. Train A travels at 70 km/h and Train B at 90 km/h. After how many hours will they be 400 km apart?",
+      "options": ["A) 2 hours", "B) 2.5 hours", "C) 3 hours", "D) 4 hours"],
+      "correct_answer": "B",
+      "math_domain": "relative_speed",
+      "note": "Combined speed = 160 km/h. Time = 400/160 = 2.5 hours."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+======================================================================
+QUALITATIVE ANALYSIS — KEY FINDINGS
+======================================================================
+
+## Finding 1: E-Prime breaks identity bridge in syl_20
+Premises: 'All models are wrong.' + 'Some models are useful.'
+Conclusion: 'Some useful things are wrong.' (VALID)
+
+--- Control (answered: VALID, correct: VALID) ---
+[...truncated...]
+st be both wrong AND useful
+
+## Verification
+
+The models that are useful (from Premise 2) must also be wrong (from Premise 1, since ALL models are wrong). Therefore, there exist things that are both useful and wrong.
+
+This is a valid application of the logical principle: if X is in set M, and all M are in set W, then X is in set W. If X is also in set U, then X is in both U and W.
+
+## Conclusion
+
+**VALID**
+
+The conclusion logically follows from the premises. The useful models referenced in Premise 2 must necessarily be wrong (by Premise 1), making them examples of useful things that are wrong.
+
+--- E-Prime (answered: INVALID, correct: VALID) ---
+[...truncated...]
+blish a necessary connection between "useful" and "wrong" through the middle term in a way that validates the conclusion.
+
+## Step 4: Conclusion Assessment
+
+The argument commits a **fallacy of the undistributed middle** in its reasoning chain. While we know some models are useful and all models are wrong, we cannot validly conclude that some useful things are wrong without additional information connecting these properties.
+
+---
+
+**INVALID**
+
+The conclusion does not follow logically from the premises. The premises fail to establish the necessary logical connection between "useful" and "wrong."
+
+--- No-Have (answered: VALID, correct: VALID) ---
+[...truncated...]
+s the subject of a particular statement → **M does not distribute**
+
+The middle term distributes in Premise 1, so this rule is satisfied.
+
+## Step 4: Check the Logical Flow
+
+From Premise 1: All models fall within the set of wrong things.
+From Premise 2: Some members of the model set are also useful.
+
+Therefore: Some members of the useful set must also belong to the wrong set.
+
+The conclusion follows necessarily from the premises.
+
+## Conclusion
+
+**VALID**
+
+The syllogism is valid. Since all models are wrong, and some models are useful, it logically follows that some useful things must be wrong.
+
+
+## Finding 2: E-Prime compliance is partial and asymmetric
+The model struggles most with 'are' (plural copula) — 31 of 52 violations.
+'Is' (singular copula) was fully avoided, suggesting the model treats
+'are' as less salient to the E-Prime constraint than 'is'.
+No-Have compliance was near-perfect (97.1%), suggesting 'to have' is
+easier to route around than 'to be' — itself a finding about the
+centrality of the copula in English reasoning patterns.
+
+## Finding 3: E-Prime disrupts answer framing
+2 of 15 causal reasoning items had extraction failures under E-Prime
+(vs 0 for control, 1 for no-have). The model cannot say 'the answer is B'
+and must find alternative framings, which don't always match standard patterns.
+Practical implication: evaluation pipelines using constrained prompting need
+robust answer extraction that doesn't assume 'X is Y' framing.

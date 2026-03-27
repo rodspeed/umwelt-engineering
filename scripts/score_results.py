@@ -100,7 +100,10 @@ def score_accuracy(record: dict) -> dict:
 
     if task_type == "syllogisms":
         extracted = extract_answer_syllogism(response)
-    elif task_type == "causal_reasoning":
+    elif task_type in (
+        "causal_reasoning", "analogical_reasoning", "classification",
+        "epistemic_calibration", "ethical_dilemmas", "math_word_problems",
+    ):
         extracted = extract_answer_causal(response)
     else:
         extracted = None

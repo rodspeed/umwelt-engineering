@@ -1,0 +1,45 @@
+======================================================================
+STATISTICAL ANALYSIS — PILOT
+======================================================================
+
+--- SYLLOGISMS ---
+
+  Control vs E-Prime:
+    Control: 20/20 (100.0%)
+    Test:    19/20 (95.0%)
+    Fisher's exact p = 1.0000  OR = inf
+    n.s. (alpha=0.05)
+
+  Control vs No-Have:
+    Control: 20/20 (100.0%)
+    Test:    20/20 (100.0%)
+    Fisher's exact p = 1.0000  OR = nan
+    n.s. (alpha=0.05)
+
+  Word count comparison:
+    Control: mean=207.7 sd=18.7
+    E-Prime: mean=238.2 sd=27.3
+    No-Have: mean=219.6 sd=16.5
+
+--- CAUSAL_REASONING ---
+
+  Control vs E-Prime:
+    Control: 15/15 (100.0%)
+    Test:    13/13 (100.0%)
+    Fisher's exact p = 1.0000  OR = nan
+    n.s. (alpha=0.05)
+
+  Control vs No-Have:
+    Control: 15/15 (100.0%)
+    Test:    14/14 (100.0%)
+    Fisher's exact p = 1.0000  OR = nan
+    n.s. (alpha=0.05)
+
+  Word count comparison:
+    Control: mean=280.8 sd=28.3
+    E-Prime: mean=308.0 sd=40.7
+    No-Have: mean=288.0 sd=33.3
+
+--- COMPLIANCE ---
+  E-Prime: 18/35 clean (51.4%), 52 total violations
+  No-Have: 136/140 clean (97.1%), 4 total violations

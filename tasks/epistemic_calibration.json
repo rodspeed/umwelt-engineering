@@ -1,0 +1,188 @@
+{
+  "task_type": "epistemic_calibration",
+  "description": "Epistemic calibration tasks requiring appropriate confidence assessment under uncertainty. Tests whether E-Prime improves performance by preventing 'I am confident' and 'this is certain' — forcing the model to specify grounds for its confidence level.",
+  "prediction": "e_prime_improves",
+  "instructions": "Read the following scenario with the evidence provided. Assess what can reasonably be concluded and with what degree of confidence. Select the statement that best captures the appropriate epistemic stance given the evidence. Explain your reasoning step by step.",
+  "items": [
+    {
+      "id": "epi_01",
+      "difficulty": "easy",
+      "scenario": "A study of 10,000 patients found that Drug X reduced symptoms in 89% of cases. The study was double-blind, placebo-controlled, and published in a peer-reviewed journal. Three independent labs replicated the result.",
+      "question": "Which statement best captures the appropriate confidence level?",
+      "options": ["A) Drug X might help some patients, but we cannot draw conclusions yet", "B) Drug X reliably reduces symptoms, supported by robust replicated evidence", "C) Drug X definitely cures the condition", "D) The study was too small to be meaningful"],
+      "correct_answer": "B",
+      "evidence_type": "strong_replicated"
+    },
+    {
+      "id": "epi_02",
+      "difficulty": "easy",
+      "scenario": "Your friend tells you they saw a news headline that coffee causes cancer. They cannot remember the source, haven't read the article, and don't know what kind of study it was based on.",
+      "question": "Which statement best captures the appropriate epistemic stance?",
+      "options": ["A) Coffee probably causes cancer based on this report", "B) Coffee definitely does not cause cancer", "C) The claim lacks sufficient sourcing to evaluate — a secondhand headline with no study details warrants no confidence adjustment", "D) We should immediately stop drinking coffee as a precaution"],
+      "correct_answer": "C",
+      "evidence_type": "hearsay_unsourced"
+    },
+    {
+      "id": "epi_03",
+      "difficulty": "medium",
+      "scenario": "A machine learning model achieves 97% accuracy on a test set of 1,000 examples. However, the test set was sampled from the same distribution as the training data, and no evaluation on out-of-distribution data has been performed.",
+      "question": "Which statement best captures the appropriate confidence in this model?",
+      "options": ["A) The model performs excellently and should be deployed", "B) The model demonstrates strong in-distribution performance, but its generalization ability remains untested", "C) 97% accuracy means the model fails 3% of the time, which makes it unreliable", "D) The test set is too small to draw any conclusions"],
+      "correct_answer": "B",
+      "evidence_type": "limited_scope"
+    },
+    {
+      "id": "epi_04",
+      "difficulty": "medium",
+      "scenario": "Archaeological excavation reveals pottery fragments at a site. Carbon dating places them at 3200 BCE ± 200 years. The pottery style resembles Minoan craftsmanship, but the site lies 500 miles from any known Minoan settlement. No other Minoan artifacts were found at the site.",
+      "question": "Which statement best captures the appropriate conclusion?",
+      "options": ["A) The Minoan civilization definitely extended to this region", "B) The pottery fragments prove long-distance Minoan trade networks", "C) The stylistic similarity suggests possible Minoan influence or trade contact, but a single artifact category at one site cannot establish a definitive cultural connection", "D) The dating must be wrong because Minoans didn't live there"],
+      "correct_answer": "C",
+      "evidence_type": "suggestive_incomplete"
+    },
+    {
+      "id": "epi_05",
+      "difficulty": "hard",
+      "scenario": "Study A (n=500) finds that bilingual children score 15% higher on executive function tasks. Study B (n=1,200) finds no significant difference. Study C (n=300) finds a 10% advantage but only for children who became bilingual before age 5. A meta-analysis of 47 studies finds a small positive effect (d=0.15) with high heterogeneity.",
+      "question": "Which statement best represents the state of evidence?",
+      "options": ["A) Bilingualism clearly improves executive function", "B) The research shows no effect of bilingualism on cognition", "C) The evidence points toward a small positive effect that varies by age of acquisition and methodology, with substantial disagreement across studies making strong claims premature", "D) The studies contradict each other, so the question is unanswerable"],
+      "correct_answer": "C",
+      "evidence_type": "mixed_heterogeneous"
+    },
+    {
+      "id": "epi_06",
+      "difficulty": "medium",
+      "scenario": "A startup claims their new battery technology achieves 5x the energy density of lithium-ion. They present data from their own lab, which has not been independently verified. They are currently seeking Series B funding. No peer-reviewed publication exists.",
+      "question": "Which statement best captures the appropriate epistemic stance?",
+      "options": ["A) The technology probably works as claimed since the company has data", "B) The claim warrants skepticism: unverified self-reported results from a party with financial incentive to overstate performance require independent replication before credibility", "C) The technology is definitely fraudulent", "D) We should invest immediately before the opportunity passes"],
+      "correct_answer": "B",
+      "evidence_type": "conflicted_source"
+    },
+    {
+      "id": "epi_07",
+      "difficulty": "hard",
+      "scenario": "A randomized controlled trial of a new teaching method shows students score 20% higher on standardized tests after one semester. However, the study could not be blinded (teachers knew which method they were using), and the researchers note that the experimental group had a more experienced teacher. The sample size was 60 students (30 per group).",
+      "question": "Which statement best captures the appropriate confidence?",
+      "options": ["A) The new teaching method significantly improves test scores", "B) The results suggest a possible positive effect, but uncontrolled confounds (teacher experience, lack of blinding) and small sample size make it impossible to attribute the improvement specifically to the teaching method", "C) The study proves nothing because it wasn't blinded", "D) The 20% improvement is too large to be explained by confounds"],
+      "correct_answer": "B",
+      "evidence_type": "confounded_rct"
+    },
+    {
+      "id": "epi_08",
+      "difficulty": "easy",
+      "scenario": "You flip a fair coin 10 times and get heads every time. You are about to flip it an 11th time.",
+      "question": "Which statement best captures the probability of the next flip?",
+      "options": ["A) Tails is more likely because it's 'due'", "B) Heads is more likely because the coin seems biased", "C) The probability of heads remains 50% — each flip of a fair coin operates independently of previous results", "D) The sequence is so unlikely that the coin must be unfair"],
+      "correct_answer": "C",
+      "evidence_type": "base_rate_independence"
+    },
+    {
+      "id": "epi_09",
+      "difficulty": "hard",
+      "scenario": "A climate model predicts 2.5°C warming by 2100 under current emissions trajectories. The model's hindcast predictions for 1990-2020 match observed temperatures within 0.1°C. However, the model assumes linear feedback loops, while recent research suggests some feedbacks (permafrost methane, ice albedo) may be nonlinear. Seventeen other models predict between 1.8°C and 4.2°C.",
+      "question": "Which statement best captures the appropriate confidence?",
+      "options": ["A) We can be confident warming will be exactly 2.5°C", "B) The model's strong hindcast record gives credibility to its projections, but the assumption of linear feedbacks introduces systematic risk of underestimation, and the 1.8-4.2°C range across models reflects genuine structural uncertainty", "C) Climate models are unreliable because they disagree with each other", "D) The nonlinear feedbacks mean the model is definitely wrong"],
+      "correct_answer": "B",
+      "evidence_type": "model_uncertainty"
+    },
+    {
+      "id": "epi_10",
+      "difficulty": "medium",
+      "scenario": "A survey of 200 employees at Company X finds that 78% report being satisfied with their work-life balance. The survey was anonymous. However, it was administered during a company all-hands meeting, and only 200 of the company's 800 employees attended.",
+      "question": "Which statement best captures the appropriate interpretation?",
+      "options": ["A) 78% of Company X employees have good work-life balance", "B) Most employees at Company X are satisfied", "C) Among the self-selected subset of employees who attended the all-hands meeting, 78% reported satisfaction — but voluntary attendance likely oversamples engaged employees, making the figure an unreliable estimate of company-wide sentiment", "D) The survey is meaningless because it wasn't mandatory"],
+      "correct_answer": "C",
+      "evidence_type": "selection_bias"
+    },
+    {
+      "id": "epi_11",
+      "difficulty": "hard",
+      "scenario": "A pharmaceutical company's internal pre-registration document shows they planned to measure 15 different outcome variables. Their published paper reports only 3 variables, all of which show statistically significant results (p < 0.05). The other 12 variables are not mentioned.",
+      "question": "Which statement best captures the appropriate epistemic stance?",
+      "options": ["A) The drug works because the published results are statistically significant", "B) The selective reporting of 3 out of 15 pre-registered variables raises serious concerns about outcome switching — with 15 independent tests at p<0.05, approximately 0.75 spurious positives would be expected by chance alone", "C) The other 12 variables were probably not important", "D) Pre-registration documents are internal and irrelevant to published results"],
+      "correct_answer": "B",
+      "evidence_type": "publication_bias"
+    },
+    {
+      "id": "epi_12",
+      "difficulty": "medium",
+      "scenario": "A DNA test identifies a suspect with a profile matching the crime scene evidence. The test has a false positive rate of 1 in 1 million. The city where the crime occurred has a population of 5 million.",
+      "question": "Which statement best captures the strength of the DNA evidence alone?",
+      "options": ["A) The suspect is definitely guilty — 1 in a million is conclusive", "B) While the match is strong evidence, in a city of 5 million, approximately 5 people would match by chance — so the DNA alone provides a roughly 1-in-5 probability of a false match without additional corroborating evidence", "C) DNA evidence is unreliable at this scale", "D) The false positive rate is too low to matter"],
+      "correct_answer": "B",
+      "evidence_type": "base_rate_neglect"
+    },
+    {
+      "id": "epi_13",
+      "difficulty": "easy",
+      "scenario": "A restaurant has 4.8 stars on a review platform based on 3,200 reviews. Your friend went once and had a terrible experience. They now insist the restaurant is bad.",
+      "question": "Which statement best captures the appropriate epistemic stance?",
+      "options": ["A) Your friend's experience proves the restaurant is bad", "B) The high aggregate rating across thousands of reviews provides stronger evidence of typical quality than a single anecdote, though your friend's experience may reflect genuine occasional variability", "C) Online reviews are always fake, so we can't trust the 4.8 rating", "D) The restaurant must be perfect because of the high rating"],
+      "correct_answer": "B",
+      "evidence_type": "anecdote_vs_aggregate"
+    },
+    {
+      "id": "epi_14",
+      "difficulty": "hard",
+      "scenario": "A theoretical physics paper proposes a mechanism for quantum gravity that resolves the black hole information paradox. The mathematics is internally consistent. The paper has been cited 150 times in 2 years. However, the theory makes no experimentally testable predictions with current or near-future technology.",
+      "question": "Which statement best captures the appropriate epistemic stance?",
+      "options": ["A) The theory is probably correct because the math works and it's highly cited", "B) The theory represents a mathematically coherent candidate framework, but without experimentally testable predictions, its empirical validity remains entirely open — internal consistency and citation count establish interest, not truth", "C) The theory is useless because it can't be tested", "D) High citation count validates the theory"],
+      "correct_answer": "B",
+      "evidence_type": "unfalsifiable_theory"
+    },
+    {
+      "id": "epi_15",
+      "difficulty": "medium",
+      "scenario": "Country A has a higher average income than Country B. A researcher concludes that the economic policies of Country A are superior. No other variables (geography, resources, colonial history, population size, trade agreements) were controlled for.",
+      "question": "Which statement best captures the appropriate conclusion?",
+      "options": ["A) Country A's policies are clearly better", "B) The income difference exists but cannot be attributed to policy differences without controlling for the many confounding variables that also differ between the countries", "C) Economic comparisons between countries are impossible", "D) The researcher is probably right because income is the most important metric"],
+      "correct_answer": "B",
+      "evidence_type": "uncontrolled_comparison"
+    },
+    {
+      "id": "epi_16",
+      "difficulty": "hard",
+      "scenario": "An AI system correctly predicts stock market movements 63% of the time over a 5-year backtest period. However, the developers tested 200 different model architectures and parameter settings before selecting this one. They did not use a held-out validation period.",
+      "question": "Which statement best captures the reliability of this prediction system?",
+      "options": ["A) 63% accuracy over 5 years demonstrates genuine predictive ability", "B) Testing 200 configurations without a held-out period makes the 63% figure likely inflated by overfitting to historical data — the system selected the best-performing variant from many trials, which capitalizes on noise rather than demonstrating genuine predictive signal", "C) 63% is only slightly above chance and therefore not meaningful", "D) Backtesting always works for predicting future market behavior"],
+      "correct_answer": "B",
+      "evidence_type": "multiple_comparisons"
+    },
+    {
+      "id": "epi_17",
+      "difficulty": "medium",
+      "scenario": "During a medical checkup, a routine screening test for a rare disease (prevalence: 1 in 10,000) comes back positive. The test has 99% sensitivity and 99% specificity.",
+      "question": "Which statement best captures the appropriate interpretation?",
+      "options": ["A) You almost certainly have the disease because the test is 99% accurate", "B) Despite the test's high accuracy, the low base rate means a positive result has only about a 1% chance of being a true positive — follow-up testing is necessary before drawing conclusions", "C) The test must be wrong because the disease is rare", "D) You should begin treatment immediately"],
+      "correct_answer": "B",
+      "evidence_type": "base_rate_bayes"
+    },
+    {
+      "id": "epi_18",
+      "difficulty": "easy",
+      "scenario": "A sports commentator predicts Team A will win the championship. Team A then wins. The commentator claims this validates their analytical method.",
+      "question": "Which statement best captures the appropriate epistemic stance?",
+      "options": ["A) The commentator's method works because the prediction was correct", "B) A single correct prediction provides minimal evidence for the validity of a method — evaluating predictive ability requires a track record across many predictions with a defined success rate", "C) Sports predictions are always just luck", "D) The commentator must have inside information"],
+      "correct_answer": "B",
+      "evidence_type": "single_prediction"
+    },
+    {
+      "id": "epi_19",
+      "difficulty": "hard",
+      "scenario": "A longitudinal study follows 50,000 people for 20 years and finds that those who eat more vegetables have a 30% lower rate of heart disease. The study controlled for age, sex, income, exercise, smoking, and BMI. However, it could not control for the 'healthy user bias' — people who eat more vegetables may also engage in many other unmeasured health-promoting behaviors.",
+      "question": "Which statement best captures the appropriate conclusion?",
+      "options": ["A) Eating vegetables prevents heart disease — the evidence is conclusive", "B) The strong association in a large, long-duration study with multiple controls provides good evidence for a protective effect, but the inability to fully control for healthy user bias means the 30% figure likely overestimates the causal contribution of vegetables specifically", "C) Observational studies can never establish causation, so this study tells us nothing", "D) The study is too large to have meaningful confounds"],
+      "correct_answer": "B",
+      "evidence_type": "observational_confound"
+    },
+    {
+      "id": "epi_20",
+      "difficulty": "medium",
+      "scenario": "Three expert economists disagree about whether a recession will occur next year. Economist A (who correctly predicted the 2008 recession) says yes. Economist B (who has the best overall track record at 65% accuracy over 20 years) says no. Economist C (Nobel laureate) says the probability is roughly 50-50.",
+      "question": "Which statement best captures the appropriate epistemic stance?",
+      "options": ["A) Economist A is most credible because they predicted 2008", "B) The disagreement among credible experts itself constitutes important information — it signals genuine uncertainty, and weighting by track record (Economist B) rather than single-event fame (A) or credentials alone (C) provides the most rational basis for forming a view", "C) Expert disagreement means nobody knows anything about economics", "D) The Nobel laureate should be trusted above the others"],
+      "correct_answer": "B",
+      "evidence_type": "expert_disagreement"
+    }
+  ]
+}
