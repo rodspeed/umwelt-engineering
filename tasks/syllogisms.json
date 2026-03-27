@@ -1,0 +1,174 @@
+{
+  "task_type": "syllogisms",
+  "description": "Classical syllogistic reasoning. Tests whether E-Prime degrades performance on tasks that natively rely on 'is' constructions.",
+  "prediction": "e_prime_degrades",
+  "instructions": "Evaluate the following syllogism. Determine whether the conclusion follows logically from the premises. Explain your reasoning step by step, then state whether the conclusion is VALID or INVALID.",
+  "items": [
+    {
+      "id": "syl_01",
+      "difficulty": "easy",
+      "premises": ["All mammals are warm-blooded.", "All dogs are mammals."],
+      "conclusion": "All dogs are warm-blooded.",
+      "correct_answer": "VALID",
+      "fallacy_type": null
+    },
+    {
+      "id": "syl_02",
+      "difficulty": "easy",
+      "premises": ["All roses are flowers.", "Some flowers are red."],
+      "conclusion": "Some roses are red.",
+      "correct_answer": "INVALID",
+      "fallacy_type": "undistributed_middle"
+    },
+    {
+      "id": "syl_03",
+      "difficulty": "medium",
+      "premises": ["No reptiles are mammals.", "Some pets are reptiles."],
+      "conclusion": "Some pets are not mammals.",
+      "correct_answer": "VALID",
+      "fallacy_type": null
+    },
+    {
+      "id": "syl_04",
+      "difficulty": "medium",
+      "premises": ["All politicians are liars.", "Some liars are charming."],
+      "conclusion": "Some politicians are charming.",
+      "correct_answer": "INVALID",
+      "fallacy_type": "undistributed_middle"
+    },
+    {
+      "id": "syl_05",
+      "difficulty": "medium",
+      "premises": ["No fish can fly.", "All salmon are fish."],
+      "conclusion": "No salmon can fly.",
+      "correct_answer": "VALID",
+      "fallacy_type": null
+    },
+    {
+      "id": "syl_06",
+      "difficulty": "hard",
+      "premises": ["Some artists are not wealthy.", "All wealthy people are influential."],
+      "conclusion": "Some artists are not influential.",
+      "correct_answer": "INVALID",
+      "fallacy_type": "illicit_minor"
+    },
+    {
+      "id": "syl_07",
+      "difficulty": "hard",
+      "premises": ["All squares are rectangles.", "All rectangles are parallelograms."],
+      "conclusion": "All squares are parallelograms.",
+      "correct_answer": "VALID",
+      "fallacy_type": null
+    },
+    {
+      "id": "syl_08",
+      "difficulty": "hard",
+      "premises": ["No heroes are cowards.", "Some soldiers are heroes."],
+      "conclusion": "No soldiers are cowards.",
+      "correct_answer": "INVALID",
+      "fallacy_type": "illicit_major"
+    },
+    {
+      "id": "syl_09",
+      "difficulty": "hard",
+      "premises": ["All databases store data.", "Some databases are relational."],
+      "conclusion": "Some things that store data are relational.",
+      "correct_answer": "VALID",
+      "fallacy_type": null
+    },
+    {
+      "id": "syl_10",
+      "difficulty": "hard",
+      "premises": ["No insects are vertebrates.", "All vertebrates have spines."],
+      "conclusion": "No insects have spines.",
+      "correct_answer": "INVALID",
+      "fallacy_type": "illicit_major"
+    },
+    {
+      "id": "syl_11",
+      "difficulty": "easy",
+      "premises": ["All cats are animals.", "All animals need water."],
+      "conclusion": "All cats need water.",
+      "correct_answer": "VALID",
+      "fallacy_type": null
+    },
+    {
+      "id": "syl_12",
+      "difficulty": "medium",
+      "premises": ["Some teachers are strict.", "All strict people are feared."],
+      "conclusion": "Some teachers are feared.",
+      "correct_answer": "VALID",
+      "fallacy_type": null
+    },
+    {
+      "id": "syl_13",
+      "difficulty": "hard",
+      "premises": ["All valid arguments preserve truth.", "This argument does not preserve truth."],
+      "conclusion": "This argument is not valid.",
+      "correct_answer": "VALID",
+      "fallacy_type": null,
+      "note": "Modus tollens disguised as syllogism — tests meta-logical reasoning"
+    },
+    {
+      "id": "syl_14",
+      "difficulty": "hard",
+      "premises": ["No empirical claims are unfalsifiable.", "Some scientific theories are unfalsifiable."],
+      "conclusion": "Some scientific theories are not empirical claims.",
+      "correct_answer": "VALID",
+      "fallacy_type": null,
+      "note": "Content is philosophically provocative — tests whether belief bias interferes"
+    },
+    {
+      "id": "syl_15",
+      "difficulty": "medium",
+      "premises": ["All efficient algorithms are fast.", "Some fast things are unreliable."],
+      "conclusion": "Some efficient algorithms are unreliable.",
+      "correct_answer": "INVALID",
+      "fallacy_type": "undistributed_middle"
+    },
+    {
+      "id": "syl_16",
+      "difficulty": "hard",
+      "premises": ["Some beliefs are justified.", "All justified beliefs require evidence."],
+      "conclusion": "Some beliefs require evidence.",
+      "correct_answer": "VALID",
+      "fallacy_type": null,
+      "note": "Epistemological content — tests whether E-Prime changes how model handles belief/justification language"
+    },
+    {
+      "id": "syl_17",
+      "difficulty": "medium",
+      "premises": ["No contradictions are true.", "All paradoxes are contradictions."],
+      "conclusion": "No paradoxes are true.",
+      "correct_answer": "VALID",
+      "fallacy_type": null,
+      "note": "Premise 2 is debatable in philosophy — tests whether model stays in logical mode"
+    },
+    {
+      "id": "syl_18",
+      "difficulty": "hard",
+      "premises": ["All conscious beings experience qualia.", "No machines experience qualia."],
+      "conclusion": "No machines are conscious beings.",
+      "correct_answer": "VALID",
+      "fallacy_type": null,
+      "note": "AI-relevant content — tests whether the model's self-reference instincts interfere with logic"
+    },
+    {
+      "id": "syl_19",
+      "difficulty": "medium",
+      "premises": ["Some languages are tonal.", "All tonal languages are difficult for English speakers."],
+      "conclusion": "Some languages are difficult for English speakers.",
+      "correct_answer": "VALID",
+      "fallacy_type": null
+    },
+    {
+      "id": "syl_20",
+      "difficulty": "hard",
+      "premises": ["All models are wrong.", "Some models are useful."],
+      "conclusion": "Some useful things are wrong.",
+      "correct_answer": "VALID",
+      "fallacy_type": null,
+      "note": "George Box aphorism — tests whether familiarity with the quote helps or biases"
+    }
+  ]
+}

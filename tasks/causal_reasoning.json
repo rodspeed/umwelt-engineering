@@ -1,0 +1,143 @@
+{
+  "task_type": "causal_reasoning",
+  "description": "Causal reasoning scenarios requiring identification of causes, mechanisms, and causal chains. Tests whether E-Prime improves performance by forcing mechanism articulation over flat 'the cause is X' statements.",
+  "prediction": "e_prime_improves",
+  "instructions": "Read the following scenario carefully. Identify the most likely cause of the described outcome. Explain the causal mechanism step by step. Then select the best answer from the options provided.",
+  "items": [
+    {
+      "id": "cau_01",
+      "difficulty": "easy",
+      "scenario": "A factory switched from supplier A to supplier B for a key component. Within two weeks, the defect rate in finished products tripled. No other changes were made to the production process.",
+      "question": "What most likely caused the increase in defects?",
+      "options": ["A) The factory workers became less careful", "B) The components from supplier B were lower quality", "C) The machines needed maintenance", "D) Customer expectations changed"],
+      "correct_answer": "B",
+      "causal_structure": "single_cause"
+    },
+    {
+      "id": "cau_02",
+      "difficulty": "medium",
+      "scenario": "A city banned cars from its downtown area. Over the next year, downtown retail sales dropped 15%, but restaurant revenue increased 25%. Residential property values in the downtown area rose 10%.",
+      "question": "What best explains the divergent effects on retail vs. restaurants?",
+      "options": ["A) Restaurants benefit from foot traffic and lingering; retail depends on drive-by convenience and bulk purchases", "B) Restaurant owners were better at marketing", "C) Retail stores raised their prices", "D) The ban only applied to certain streets"],
+      "correct_answer": "A",
+      "causal_structure": "divergent_effects"
+    },
+    {
+      "id": "cau_03",
+      "difficulty": "medium",
+      "scenario": "A software team adopted daily standups and saw velocity increase by 20%. They then added sprint retrospectives and velocity increased another 10%. When they later dropped standups due to 'meeting fatigue,' velocity dropped by 35%.",
+      "question": "Why did velocity drop more than the original standup gain?",
+      "options": ["A) The retrospectives depended on standup insights to identify improvements", "B) The team became lazy", "C) The scrum master left the company", "D) The project became more complex"],
+      "correct_answer": "A",
+      "causal_structure": "interaction_effect"
+    },
+    {
+      "id": "cau_04",
+      "difficulty": "hard",
+      "scenario": "Country X raised minimum wage by 30%. Unemployment among low-wage workers initially dropped (more people entered the workforce). After 18 months, small business closures increased 12% and unemployment among the same group rose above pre-raise levels.",
+      "question": "What causal mechanism best explains the delayed negative effect?",
+      "options": ["A) Workers became less motivated over time", "B) Short-term demand stimulus from higher wages was overtaken by long-term margin pressure causing business failures", "C) Immigration increased", "D) The government changed other policies simultaneously"],
+      "correct_answer": "B",
+      "causal_structure": "delayed_feedback_loop"
+    },
+    {
+      "id": "cau_05",
+      "difficulty": "easy",
+      "scenario": "Plants in office A grow better than identical plants in office B. Office A has large south-facing windows. Office B has small north-facing windows. Both offices maintain the same temperature and watering schedule.",
+      "question": "What is the most likely cause of the growth difference?",
+      "options": ["A) Office A has better soil", "B) Office A receives more natural light", "C) The people in office A talk to the plants more", "D) Office B has toxic building materials"],
+      "correct_answer": "B",
+      "causal_structure": "single_cause"
+    },
+    {
+      "id": "cau_06",
+      "difficulty": "hard",
+      "scenario": "A hospital implemented a new hand-washing protocol. Infection rates dropped 40% in the first month. By month six, infection rates had returned to pre-protocol levels despite continued compliance monitoring showing 95% adherence.",
+      "question": "What most likely explains the return of high infection rates despite maintained compliance?",
+      "options": ["A) The bacteria evolved resistance to the soap", "B) Staff became careless despite appearing compliant", "C) The initial drop reflected a Hawthorne effect, and the remaining infections stemmed from non-hand-contact vectors that the protocol couldn't address", "D) New patients brought in different infections"],
+      "correct_answer": "C",
+      "causal_structure": "confound_revelation"
+    },
+    {
+      "id": "cau_07",
+      "difficulty": "medium",
+      "scenario": "An online store added customer reviews to product pages. Products with positive reviews saw sales increase 30%. Products with mixed reviews (3-4 stars average) saw sales increase 50%.",
+      "question": "Why did mixed reviews produce a larger sales increase than purely positive reviews?",
+      "options": ["A) Mixed reviews appear more authentic and trustworthy than uniformly positive ones", "B) The mixed-review products were cheaper", "C) More people saw the mixed-review products", "D) The positive reviews were too short"],
+      "correct_answer": "A",
+      "causal_structure": "counterintuitive"
+    },
+    {
+      "id": "cau_08",
+      "difficulty": "hard",
+      "scenario": "A school district switched from letter grades to pass/fail. Average test scores dropped 8%. However, student-reported stress decreased 40%, course exploration increased 25% (students took more electives outside their comfort zone), and the bottom quartile of students improved their scores by 12%.",
+      "question": "What causal mechanism best explains why the bottom quartile improved while overall averages dropped?",
+      "options": ["A) Smart students stopped trying while struggling students felt less threat and engaged more", "B) The tests became easier", "C) Teachers graded more leniently", "D) Students cheated less under pass/fail"],
+      "correct_answer": "A",
+      "causal_structure": "differential_effect"
+    },
+    {
+      "id": "cau_09",
+      "difficulty": "medium",
+      "scenario": "A city added bike lanes on major roads. Car traffic congestion initially worsened (lanes were removed for bikes). After two years, congestion was lower than before the bike lanes were added, even though the city's population grew 5%.",
+      "question": "What mechanism explains the long-term congestion improvement?",
+      "options": ["A) People got used to the traffic", "B) Mode shift — enough drivers switched to cycling that the reduced car volume more than compensated for the lost lane capacity", "C) The city built new roads elsewhere", "D) People started working from home"],
+      "correct_answer": "B",
+      "causal_structure": "delayed_positive_feedback"
+    },
+    {
+      "id": "cau_10",
+      "difficulty": "hard",
+      "scenario": "A tech company offered unlimited PTO. In year one, employees took 10% fewer vacation days than under the old fixed-allowance policy. Employee satisfaction scores regarding time off dropped despite having more theoretical freedom.",
+      "question": "What mechanism best explains why more freedom led to less usage and lower satisfaction?",
+      "options": ["A) Employees were too busy with projects", "B) Without a defined entitlement, social pressure and ambiguity about 'acceptable' amounts created implicit constraints stronger than the explicit ones they replaced", "C) Management secretly discouraged time off", "D) The company hired more workaholics"],
+      "correct_answer": "B",
+      "causal_structure": "paradox_of_choice"
+    },
+    {
+      "id": "cau_11",
+      "difficulty": "easy",
+      "scenario": "A farmer's crop yield dropped significantly. The farmer used the same seeds and fertilizer as the previous year. However, rainfall this season was 60% below the 10-year average.",
+      "question": "What most likely caused the yield drop?",
+      "options": ["A) The seeds were defective", "B) Insufficient rainfall", "C) The farmer planted too late", "D) Pests destroyed the crops"],
+      "correct_answer": "B",
+      "causal_structure": "single_cause"
+    },
+    {
+      "id": "cau_12",
+      "difficulty": "medium",
+      "scenario": "A social media platform changed its algorithm to show more content from close friends and less from pages/brands. Time spent on the platform decreased 15%, but user-reported satisfaction increased 20% and daily active users increased 8%.",
+      "question": "What explains the divergent metrics?",
+      "options": ["A) Users spent less time scrolling passively but opened the app more often for meaningful interactions", "B) The algorithm was buggy", "C) Users didn't notice the change", "D) Advertisers left the platform"],
+      "correct_answer": "A",
+      "causal_structure": "divergent_effects"
+    },
+    {
+      "id": "cau_13",
+      "difficulty": "hard",
+      "scenario": "A country introduced universal basic income (UBI) as a pilot in one province. Employment rates in that province stayed stable. However, entrepreneurship rates increased 40%, and the types of jobs people held shifted — fewer people worked in jobs they described as 'purely for survival' and more in jobs they described as 'meaningful.'",
+      "question": "What mechanism best explains the entrepreneurship increase without employment decrease?",
+      "options": ["A) UBI provided a financial safety net that lowered the risk of starting a business, enabling people to leave survival jobs for entrepreneurial ventures rather than for unemployment", "B) The UBI amount was too small to live on", "C) Only entrepreneurs signed up for the pilot", "D) The province already had high entrepreneurship"],
+      "correct_answer": "A",
+      "causal_structure": "enabling_condition"
+    },
+    {
+      "id": "cau_14",
+      "difficulty": "medium",
+      "scenario": "An airline introduced a 'basic economy' ticket with no bag included. Sales of regular economy tickets (with bags) increased 12%, even though their price didn't change. Total revenue per flight increased 18%.",
+      "question": "Why did regular economy sales increase?",
+      "options": ["A) The basic economy option made regular economy feel like a deal by comparison — an anchoring effect", "B) More people started traveling", "C) Competitors raised their prices", "D) The airline improved its service"],
+      "correct_answer": "A",
+      "causal_structure": "anchoring_decoy"
+    },
+    {
+      "id": "cau_15",
+      "difficulty": "hard",
+      "scenario": "Researchers found that students who handwrite notes perform better on conceptual questions than students who type notes, even though typed notes contain more content and are more verbatim. Both groups studied their notes for the same amount of time before testing.",
+      "question": "What mechanism best explains the handwriting advantage?",
+      "options": ["A) Handwriting is slower, forcing real-time summarization and deeper processing during encoding — the 'desirable difficulty' produces better conceptual representations than verbatim transcription", "B) Handwriting is more fun", "C) Typed notes are harder to read", "D) The handwriting students were smarter"],
+      "correct_answer": "A",
+      "causal_structure": "desirable_difficulty"
+    }
+  ]
+}
