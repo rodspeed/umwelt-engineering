@@ -5,41 +5,69 @@ STATISTICAL ANALYSIS — PILOT
 --- SYLLOGISMS ---
 
   Control vs E-Prime:
-    Control: 20/20 (100.0%)
-    Test:    19/20 (95.0%)
-    Fisher's exact p = 1.0000  OR = inf
+    Control: 80/81 (98.8%)
+    Test:    78/79 (98.7%)
+    Fisher's exact p = 1.0000  OR = 1.026
     n.s. (alpha=0.05)
 
   Control vs No-Have:
-    Control: 20/20 (100.0%)
+    Control: 80/81 (98.8%)
     Test:    20/20 (100.0%)
-    Fisher's exact p = 1.0000  OR = nan
+    Fisher's exact p = 1.0000  OR = 0.000
     n.s. (alpha=0.05)
 
   Word count comparison:
-    Control: mean=207.7 sd=18.7
-    E-Prime: mean=238.2 sd=27.3
-    No-Have: mean=219.6 sd=16.5
+    Control: mean=280.4 sd=133.2 n=81
+    E-Prime: mean=248.4 sd=81.9 n=80
+    No-Have: mean=219.6 sd=16.5 n=20
+    Control vs E-Prime word count: U=3218, p=0.9434, r=0.007 n.s.
+    Control vs No-Have word count: U=878, p=0.5680, r=-0.083 n.s.
 
 --- CAUSAL_REASONING ---
 
   Control vs E-Prime:
-    Control: 15/15 (100.0%)
-    Test:    13/13 (100.0%)
-    Fisher's exact p = 1.0000  OR = nan
+    Control: 47/60 (78.3%)
+    Test:    49/54 (90.7%)
+    Fisher's exact p = 0.0783  OR = 0.369
     n.s. (alpha=0.05)
 
   Control vs No-Have:
-    Control: 15/15 (100.0%)
+    Control: 47/60 (78.3%)
     Test:    14/14 (100.0%)
-    Fisher's exact p = 1.0000  OR = nan
+    Fisher's exact p = 0.1112  OR = 0.000
     n.s. (alpha=0.05)
 
   Word count comparison:
-    Control: mean=280.8 sd=28.3
-    E-Prime: mean=308.0 sd=40.7
-    No-Have: mean=288.0 sd=33.3
+    Control: mean=526.1 sd=389.0 n=60
+    E-Prime: mean=355.7 sd=131.0 n=57
+    No-Have: mean=288.0 sd=33.3 n=15
+    Control vs E-Prime word count: U=1974, p=0.1515, r=-0.154 n.s.
+    Control vs No-Have word count: U=648, p=0.0087, r=-0.441 *
 
 --- COMPLIANCE ---
-  E-Prime: 18/35 clean (51.4%), 52 total violations
+  E-Prime: 41/137 clean (29.9%), 383 total violations
   No-Have: 136/140 clean (97.1%), 4 total violations
+
+--- COMPLIANCE-FILTERED ACCURACY (temp=0.0) ---
+  (Accuracy computed only on trials with zero constraint violations)
+
+  SYLLOGISMS:
+    Control all trials: 80/81 (98.8%)
+    Control compliant only: 80/81 (98.8%)
+    E-Prime all trials: 78/79 (98.7%)
+    E-Prime compliant only: 12/12 (100.0%)
+    E-Prime non-compliant: 66/67 (98.5%)
+    No-Have all trials: 20/20 (100.0%)
+    No-Have compliant only: 19/19 (100.0%)
+    No-Have non-compliant: 1/1 (100.0%)
+    Fisher's exact (compliant only) Control vs E-Prime: p=1.0000 OR=0.000 n.s.
+
+  CAUSAL_REASONING:
+    Control all trials: 47/60 (78.3%)
+    Control compliant only: 47/60 (78.3%)
+    E-Prime all trials: 49/54 (90.7%)
+    E-Prime compliant only: 26/27 (96.3%)
+    E-Prime non-compliant: 23/27 (85.2%)
+    No-Have all trials: 14/14 (100.0%)
+    No-Have compliant only: 14/14 (100.0%)
+    Fisher's exact (compliant only) Control vs E-Prime: p=0.0551 OR=0.139 n.s.

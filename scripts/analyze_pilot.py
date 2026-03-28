@@ -237,6 +237,75 @@ def plot_per_item_accuracy(scored, temp_filter=0.0):
     print(f"  Saved per_item_syllogisms.png")
 
 
+def plot_compliance_filtered_accuracy(scored, temp_filter=0.0):
+    """Bar chart: accuracy split by compliant vs non-compliant trials."""
+    subset = [s for s in scored if s["temperature"] == temp_filter]
+    tasks = ["syllogisms", "causal_reasoning"]
+    conditions = ["control", "e_prime", "no_have"]
+
+    fig, axes = plt.subplots(1, len(tasks), figsize=(12, 5), sharey=True)
+    if len(tasks) == 1:
+        axes = [axes]
+
+    for ax, task in zip(axes, tasks):
+        x_labels = []
+        x_vals = []
+        colors = []
+        hatches = []
+
+        for cond in conditions:
+            trials = [s for s in subset if s["condition"] == cond and s["task_type"] == task and s["is_correct"] is not None]
+            if not trials:
+                continue
+
+            clean = [t for t in trials if t["n_violations"] == 0]
+            dirty = [t for t in trials if t["n_violations"] > 0]
+
+            # All trials
+            all_acc = sum(t["is_correct"] for t in trials) / len(trials) * 100
+            x_labels.append(f"{LABELS[cond]}\nall (n={len(trials)})")
+            x_vals.append(all_acc)
+            colors.append(COLORS[cond])
+            hatches.append('')
+
+            # Compliant only
+            if clean:
+                clean_acc = sum(t["is_correct"] for t in clean) / len(clean) * 100
+                x_labels.append(f"{LABELS[cond]}\nclean (n={len(clean)})")
+                x_vals.append(clean_acc)
+                colors.append(COLORS[cond])
+                hatches.append('///')
+
+            # Non-compliant only
+            if dirty:
+                dirty_acc = sum(t["is_correct"] for t in dirty) / len(dirty) * 100
+                x_labels.append(f"{LABELS[cond]}\ndirty (n={len(dirty)})")
+                x_vals.append(dirty_acc)
+                colors.append(COLORS[cond])
+                hatches.append('...')
+
+        bars = ax.bar(range(len(x_vals)), x_vals, color=colors, alpha=0.75)
+        for bar, hatch in zip(bars, hatches):
+            bar.set_hatch(hatch)
+        for bar, val in zip(bars, x_vals):
+            ax.text(bar.get_x() + bar.get_width() / 2., bar.get_height() + 0.5,
+                    f'{val:.0f}%', ha='center', va='bottom', fontsize=9, fontweight='bold')
+
+        ax.set_xticks(range(len(x_labels)))
+        ax.set_xticklabels(x_labels, fontsize=8, rotation=45, ha='right')
+        ax.set_ylim(0, 110)
+        ax.set_title(task.replace('_', ' ').title(), fontsize=12, fontweight='bold')
+        ax.spines['top'].set_visible(False)
+        ax.spines['right'].set_visible(False)
+
+    axes[0].set_ylabel('Accuracy (%)', fontsize=12)
+    fig.suptitle('Accuracy by Compliance Status (temp=0)', fontsize=14, fontweight='bold')
+    plt.tight_layout()
+    plt.savefig(ANALYSIS_DIR / "compliance_filtered_accuracy.png", dpi=150)
+    plt.close()
+    print(f"  Saved compliance_filtered_accuracy.png")
+
+
 def plot_constraint_fingerprint(scored, temp_filter=0.0):
     """Radar/spider chart: multi-metric comparison across conditions."""
     subset = [s for s in scored if s["temperature"] == temp_filter]
@@ -289,8 +358,8 @@ def plot_constraint_fingerprint(scored, temp_filter=0.0):
 
 
 def statistical_tests(scored, temp_filter=0.0):
-    """Run Fisher's exact test on accuracy differences."""
-    from scipy.stats import fisher_exact
+    """Run Fisher's exact test on accuracy differences + Mann-Whitney U on word counts."""
+    from scipy.stats import fisher_exact, mannwhitneyu
 
     subset = [s for s in scored if s["temperature"] == temp_filter]
     report = []
@@ -327,13 +396,27 @@ def statistical_tests(scored, temp_filter=0.0):
             report.append(f"    Fisher's exact p = {p_value:.4f}  OR = {odds_ratio:.3f}")
             report.append(f"    {'*' if p_value < 0.05 else 'n.s.'} (alpha=0.05)")
 
-        # Word count comparison
+        # Word count comparison with Mann-Whitney U
         report.append(f"\n  Word count comparison:")
+        ctrl_words_list = []
         for cond in ["control", "e_prime", "no_have"]:
             trials = [s for s in subset if s["condition"] == cond and s["task_type"] == task]
             if trials:
                 words = [t["word_count"] for t in trials]
-                report.append(f"    {LABELS[cond]}: mean={np.mean(words):.1f} sd={np.std(words):.1f}")
+                report.append(f"    {LABELS[cond]}: mean={np.mean(words):.1f} sd={np.std(words):.1f} n={len(words)}")
+                if cond == "control":
+                    ctrl_words_list = words
+
+        # Mann-Whitney U tests for word count (control vs each constraint)
+        if ctrl_words_list:
+            for cond_label, cond_key in [("E-Prime", "e_prime"), ("No-Have", "no_have")]:
+                cond_words = [t["word_count"] for t in subset if t["condition"] == cond_key and t["task_type"] == task]
+                if cond_words and len(ctrl_words_list) >= 3 and len(cond_words) >= 3:
+                    u_stat, u_p = mannwhitneyu(ctrl_words_list, cond_words, alternative='two-sided')
+                    # Effect size: rank-biserial r = 1 - (2U / n1*n2)
+                    n1, n2 = len(ctrl_words_list), len(cond_words)
+                    r_effect = 1 - (2 * u_stat) / (n1 * n2)
+                    report.append(f"    Control vs {cond_label} word count: U={u_stat:.0f}, p={u_p:.4f}, r={r_effect:.3f} {'*' if u_p < 0.05 else 'n.s.'}")
 
     # Compliance summary
     report.append(f"\n--- COMPLIANCE ---")
@@ -342,6 +425,44 @@ def statistical_tests(scored, temp_filter=0.0):
         clean = sum(1 for t in trials if t["n_violations"] == 0)
         total_v = sum(t["n_violations"] for t in trials)
         report.append(f"  {LABELS[cond]}: {clean}/{len(trials)} clean ({clean/len(trials)*100:.1f}%), {total_v} total violations")
+
+    # Compliance-filtered accuracy analysis
+    report.append(f"\n--- COMPLIANCE-FILTERED ACCURACY (temp={temp_filter}) ---")
+    report.append("  (Accuracy computed only on trials with zero constraint violations)")
+    for task in ["syllogisms", "causal_reasoning"]:
+        report.append(f"\n  {task.upper()}:")
+        for cond in ["control", "e_prime", "no_have"]:
+            trials = [s for s in subset if s["condition"] == cond and s["task_type"] == task and s["is_correct"] is not None]
+            if not trials:
+                continue
+            clean_trials = [t for t in trials if t["n_violations"] == 0]
+            dirty_trials = [t for t in trials if t["n_violations"] > 0]
+
+            all_acc = sum(t["is_correct"] for t in trials) / len(trials) * 100
+            report.append(f"    {LABELS[cond]} all trials: {sum(t['is_correct'] for t in trials)}/{len(trials)} ({all_acc:.1f}%)")
+
+            if clean_trials:
+                clean_acc = sum(t["is_correct"] for t in clean_trials) / len(clean_trials) * 100
+                report.append(f"    {LABELS[cond]} compliant only: {sum(t['is_correct'] for t in clean_trials)}/{len(clean_trials)} ({clean_acc:.1f}%)")
+            else:
+                report.append(f"    {LABELS[cond]} compliant only: 0 trials")
+
+            if dirty_trials:
+                dirty_acc = sum(t["is_correct"] for t in dirty_trials) / len(dirty_trials) * 100
+                report.append(f"    {LABELS[cond]} non-compliant: {sum(t['is_correct'] for t in dirty_trials)}/{len(dirty_trials)} ({dirty_acc:.1f}%)")
+
+        # Fisher's exact on compliance-filtered: control vs compliant-only e_prime
+        ctrl_clean = [s for s in subset if s["condition"] == "control" and s["task_type"] == task
+                      and s["is_correct"] is not None and s["n_violations"] == 0]
+        ep_clean = [s for s in subset if s["condition"] == "e_prime" and s["task_type"] == task
+                    and s["is_correct"] is not None and s["n_violations"] == 0]
+        if ctrl_clean and ep_clean:
+            cc = sum(t["is_correct"] for t in ctrl_clean)
+            cw = len(ctrl_clean) - cc
+            ec = sum(t["is_correct"] for t in ep_clean)
+            ew = len(ep_clean) - ec
+            odds_ratio, p_value = fisher_exact([[cc, cw], [ec, ew]])
+            report.append(f"    Fisher's exact (compliant only) Control vs E-Prime: p={p_value:.4f} OR={odds_ratio:.3f} {'*' if p_value < 0.05 else 'n.s.'}")
 
     report_text = "\n".join(report)
     print(report_text)
@@ -415,6 +536,7 @@ def main():
     plot_compliance_heatmap(scored)
     plot_per_item_accuracy(scored)
     plot_constraint_fingerprint(scored)
+    plot_compliance_filtered_accuracy(scored)
 
     print("\nRunning statistical tests...")
     statistical_tests(scored)

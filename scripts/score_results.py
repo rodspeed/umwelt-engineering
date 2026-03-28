@@ -72,22 +72,51 @@ def extract_answer_causal(response_text: str) -> str | None:
 
     # Priority 3: Explicit answer framing
     for pattern in [
-        r"(?:best answer|correct answer|answer)\s*(?:is|:|remains|stands as)\s*\*?\*?\(?([A-D])\)?",
+        r"(?:best answer|correct answer|final answer|answer)\s*(?:is|:|remains|stands as|reads as)\s*\*?\*?\(?([A-D])\)?",
+        r"(?:best answer|correct answer|final answer|answer)\s*(?:is|:|remains|stands as)\s*\*?\*?(?:option\s+)?\(?([A-D])\)?",
         r"(?:select|choose|pick)\s*\*?\*?\(?([A-D])\)?",
+        # "resides in Option B", "lies in B", "found in option B"
+        r"(?:resides?\s+in|lies?\s+in|found\s+in)\s+\*?\*?(?:option\s+)?\(?([A-D])\)?",
+        # LaTeX boxed format (Gemini): $\boxed{B}$
+        r"\\boxed\{([A-D])\}",
+        # "Option B best captures", "Option B represents" — Option X as answer
+        r"(?:therefore|thus|hence|so)[,:]?\s*\*?\*?(?:option\s+)?\(?([A-D])\)?",
     ]:
         match = re.search(pattern, text, re.MULTILINE)
         if match:
             return match.group(1)
 
-    # Priority 4: Last bold letter (likely the final answer, not option listing)
+    # Priority 4: Last bold letter or bold "Option X" (likely the final answer)
     bold_matches = re.findall(r"\*\*\(?([A-D])\)?\*\*", text)
+    if not bold_matches:
+        # Try bold "Option X"
+        bold_matches = re.findall(r"\*\*OPTION\s+([A-D])\*\*", text)
     if bold_matches:
         return bold_matches[-1]
 
-    # Priority 5: Last standalone letter option mentioned
+    # Priority 5: Last standalone letter option mentioned (with or without paren)
     matches = re.findall(r"\b([A-D])\)", text)
     if matches:
         return matches[-1]
+
+    # Priority 6: Last "Option X" mention in final 20% of response
+    cutoff = len(text) * 4 // 5
+    tail = text[cutoff:]
+    option_matches = re.findall(r"\bOPTION\s+([A-D])\b", tail)
+    if option_matches:
+        return option_matches[-1]
+
+    # Priority 7: Last standalone letter near end of response (within final 200 chars)
+    end_text = text[-200:]
+    final_matches = re.findall(r"\b([A-D])\b", end_text)
+    if final_matches:
+        # Filter out common false positives (A/I as articles, etc.)
+        # Only accept if it looks like an answer context
+        for m in reversed(final_matches):
+            # Skip 'A' if it could be an article (preceded by nothing meaningful)
+            if m == 'A' and not re.search(r'(?:OPTION|ANSWER|CHOICE)\s+A\b', end_text):
+                continue
+            return m
 
     return None
 
@@ -196,6 +225,8 @@ def score_all(results_file: Path) -> list[dict]:
 
             scored.append({
                 "trial_id": record["trial_id"],
+                "model": record.get("model", "unknown"),
+                "provider": record.get("provider", "unknown"),
                 "condition": record["condition"],
                 "task_type": record["task_type"],
                 "item_id": record["item_id"],

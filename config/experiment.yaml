@@ -81,10 +81,8 @@ models:
       label: "Claude Haiku 4.5"
     - id: "gpt-4o-mini"
       label: "GPT-4o Mini"
-    - id: "gemini-2.0-flash"
-      label: "Gemini 2.0 Flash"
-    - id: "ollama/llama3.1:8b"
-      label: "Llama 3.1 8B (local)"
+    - id: "gemini-2.5-flash-lite"
+      label: "Gemini 2.5 Flash Lite"
 
 run_settings:
   trials_per_item: 3          # repetitions per stimulus at temp > 0
