@@ -1,6 +1,6 @@
 # Lexical Bottlenecks: How Verb-Class Constraints Reshape LLM Reasoning
 
-**Rod Speed**
+**Rodney Jehu-Appiah**
 
 March 2026
 
