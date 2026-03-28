@@ -40,7 +40,7 @@ tasks:
     file: "tasks/causal_reasoning.json"
     prediction: "e_prime_improves"
     rationale: "'The cause is X' collapses complex chains; E-Prime forces mechanism articulation"
-    n_items: 20
+    n_items: 15
 
   analogical_reasoning:
     file: "tasks/analogical_reasoning.json"
